@@ -35,7 +35,7 @@ if (!class_exists('CM_WP_Module_Config')) {
             // Work your way down the tree to the required level
             $key_pointer = &$this->static_config;
             foreach ( $key_array as $level => $key_part ) {
-                if ( ! is_array( $key_pointer[$key_part] ) ) {
+                if ( empty($key_pointer[$key_part]) || ! is_array( $key_pointer[$key_part] ) ) {
                     $key_pointer[$key_part] = array();
                 }
                 $key_pointer = &$key_pointer[$key_part];
